@@ -51,6 +51,8 @@ extension Dictionary {
         for (key,value) in self {
             if let value = (value as? Int), value % 1 == 0 {
                 output +=  "\"\(key)\":\(value),"
+            } else if let value = (value as? Double) {
+                output +=  "\"\(key)\":\(value),"
             } else if let value = (value as? Dictionary) {
                 output +=  "\"\(key)\":\"\(String(describing: value.queryString))\","
             } else {

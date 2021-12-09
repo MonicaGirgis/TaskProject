@@ -11,7 +11,7 @@ enum ProjectNetwork{
     case GetUserInformation(token: String)
     case GetUnits(params: String, id: String)
     case GetAddress(position: Coords, id: Int)
-    case CalculateSensorsValues(id: String)
+    case CalculateSensorsValues(sid: String, unitId: Int)
     
 }
 
@@ -29,6 +29,13 @@ extension ProjectNetwork: Endpoint{
         }
     }
     
+    var body: [String: Any]? {
+        switch self{
+        default:
+            return nil
+        }
+    }
+    
     var queryItems: [URLQueryItem] {
         switch self{
         case .GetUserInformation(let token):
@@ -38,12 +45,12 @@ extension ProjectNetwork: Endpoint{
                     URLQueryItem(name: "svc", value: "core/search_items"),
                     URLQueryItem(name: "sid", value: id)]
         case .GetAddress(let position, let id):
-            return [URLQueryItem(name: "coords", value: "\(String(describing: position))"),
+            return [URLQueryItem(name: "coords", value: "[{\(position.dictionary.queryString)}]"),
                     URLQueryItem(name: "uid", value: "\(id)")]
-        case .CalculateSensorsValues(let id):
+        case .CalculateSensorsValues(let sid, let unitId):
             return [URLQueryItem(name: "svc", value: "unit/calc_last_message"),
-                    URLQueryItem(name: "params", value: ""),
-                    URLQueryItem(name: "sid", value: id)]
+                    URLQueryItem(name: "params", value: "{\"unitId\":\(unitId)}"),
+                    URLQueryItem(name: "sid", value: sid)]
         }
     }
     

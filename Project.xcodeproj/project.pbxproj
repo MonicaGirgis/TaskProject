@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C512F6A5276263490056CD8B /* SensorValuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C512F6A4276263490056CD8B /* SensorValuesViewController.swift */; };
+		C512F6A827626AF90056CD8B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C512F6A727626AF90056CD8B /* BaseViewController.swift */; };
 		C566D2BD275E0467001A93FE /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C566D2BC275E0467001A93FE /* Unit.swift */; };
 		C566D2C1275E20D8001A93FE /* UnitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C566D2BF275E20D8001A93FE /* UnitTableViewCell.swift */; };
 		C566D2C2275E20D8001A93FE /* UnitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C566D2C0275E20D8001A93FE /* UnitTableViewCell.xib */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C512F6A4276263490056CD8B /* SensorValuesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorValuesViewController.swift; sourceTree = "<group>"; };
+		C512F6A727626AF90056CD8B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C566D2BC275E0467001A93FE /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		C566D2BF275E20D8001A93FE /* UnitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTableViewCell.swift; sourceTree = "<group>"; };
 		C566D2C0275E20D8001A93FE /* UnitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnitTableViewCell.xib; sourceTree = "<group>"; };
@@ -69,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C512F6A627626ADD0056CD8B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C512F6A727626AF90056CD8B /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		C566D2BE275E20A9001A93FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +109,7 @@
 		C583C065275CE20F00F075B6 /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				C512F6A627626ADD0056CD8B /* Base */,
 				C583C07A275CE27300F075B6 /* App Delegate */,
 				C583C08C275D5B0500F075B6 /* Extensions */,
 				C583C07E275CE6D300F075B6 /* Network */,
@@ -142,6 +155,7 @@
 				C583C085275D292F00F075B6 /* webViewController.swift */,
 				C583C087275D2FFC00F075B6 /* UserInformationViewController.swift */,
 				C583C092275D682D00F075B6 /* UnitsViewController.swift */,
+				C512F6A4276263490056CD8B /* SensorValuesViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -256,6 +270,7 @@
 				C566D2C1275E20D8001A93FE /* UnitTableViewCell.swift in Sources */,
 				C583C08E275D5B2B00F075B6 /* URL + Extenstions.swift in Sources */,
 				C583C086275D292F00F075B6 /* webViewController.swift in Sources */,
+				C512F6A827626AF90056CD8B /* BaseViewController.swift in Sources */,
 				C566D2C8275EBF0E001A93FE /* UIViewController+Extensions.swift in Sources */,
 				C583C088275D2FFC00F075B6 /* UserInformationViewController.swift in Sources */,
 				C57601CA275FEEFD00B380A8 /* UIButton + Extensions.swift in Sources */,
@@ -268,6 +283,7 @@
 				C583C082275CEFC100F075B6 /* APIHandler.swift in Sources */,
 				C583C080275CEC7000F075B6 /* APIRoute.swift in Sources */,
 				C583C091275D5EF700F075B6 /* Spec.swift in Sources */,
+				C512F6A5276263490056CD8B /* SensorValuesViewController.swift in Sources */,
 				C583C069275CE20F00F075B6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

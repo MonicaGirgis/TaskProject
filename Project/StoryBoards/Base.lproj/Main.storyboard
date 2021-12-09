@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -70,7 +70,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="qHW-au-vam">
-                                <rect key="frame" x="32" y="372" width="350" height="152"/>
+                                <rect key="frame" x="32" y="398" width="350" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgx-EM-Pm6">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="48"/>
@@ -84,7 +84,6 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="getUnitsAction:" destination="IAY-Np-CXH" eventType="touchUpInside" id="9k4-Wt-B6E"/>
-                                            <segue destination="hcL-dx-tr2" kind="show" identifier="showUnits" id="W81-Of-eHL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SE3-w8-gvc">
@@ -99,20 +98,6 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="getAddressAction:" destination="IAY-Np-CXH" eventType="touchUpInside" id="1Ha-VD-qcd"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJW-TK-XSY">
-                                        <rect key="frame" x="0.0" y="104" width="350" height="48"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="RU2-12-WKn"/>
-                                        </constraints>
-                                        <color key="tintColor" systemColor="systemTealColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Calculate sensors values">
-                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="calculateSensorsAction:" destination="IAY-Np-CXH" eventType="touchUpInside" id="SIM-pw-QMW"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -132,11 +117,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="4yy-SB-RNP"/>
                     <connections>
-                        <outlet property="calculateSensorsButton" destination="HJW-TK-XSY" id="Qbp-Hr-7Pz"/>
                         <outlet property="getAddressButton" destination="SE3-w8-gvc" id="hYk-Ow-sxM"/>
                         <outlet property="getUnitsButton" destination="tgx-EM-Pm6" id="yeN-B9-9WB"/>
                         <outlet property="idLabel" destination="3Nx-0h-Arf" id="e1r-8G-zWc"/>
                         <outlet property="nameLabel" destination="hCu-2j-HkI" id="5KT-53-7xO"/>
+                        <segue destination="hcL-dx-tr2" kind="show" identifier="showUnits" id="gsy-Vb-iwM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SdX-WX-891" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -151,7 +136,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jrd-tD-yEE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jrd-tD-yEE">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
@@ -172,11 +157,47 @@
                     <navigationItem key="navigationItem" id="5ul-3l-Jb6"/>
                     <connections>
                         <outlet property="unitsTableView" destination="jrd-tD-yEE" id="WpH-xd-9s6"/>
+                        <segue destination="cyN-v8-7WR" kind="show" identifier="showSensorValues" id="eyS-rq-rvU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CzR-ky-P4b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3518.840579710145" y="81.696428571428569"/>
+        </scene>
+        <!--Sensor Values View Controller-->
+        <scene sceneID="RK8-zV-cmi">
+            <objects>
+                <viewController id="cyN-v8-7WR" customClass="SensorValuesViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fmg-Vt-9Q3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Typ-PZ-wsK">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="cyN-v8-7WR" id="R6F-Yz-hQQ"/>
+                                    <outlet property="delegate" destination="cyN-v8-7WR" id="yKF-O4-tx1"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TV2-nr-Kov"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Typ-PZ-wsK" firstAttribute="top" secondItem="TV2-nr-Kov" secondAttribute="top" id="68A-2x-egZ"/>
+                            <constraint firstItem="TV2-nr-Kov" firstAttribute="trailing" secondItem="Typ-PZ-wsK" secondAttribute="trailing" id="gQM-vA-xBf"/>
+                            <constraint firstItem="Typ-PZ-wsK" firstAttribute="leading" secondItem="TV2-nr-Kov" secondAttribute="leading" id="irD-OM-7vC"/>
+                            <constraint firstItem="TV2-nr-Kov" firstAttribute="bottom" secondItem="Typ-PZ-wsK" secondAttribute="bottom" id="jlb-V6-Sgm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="et8-4P-ag6"/>
+                    <connections>
+                        <outlet property="sensorsValuesTableView" destination="Typ-PZ-wsK" id="tTI-if-eYj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6qx-ad-Fds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4323" y="82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Odi-cG-PvW">

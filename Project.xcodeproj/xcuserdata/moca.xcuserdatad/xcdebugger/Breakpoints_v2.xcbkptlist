@@ -7,31 +7,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "71B5DC0E-8C15-4F76-BBF8-6539B9ABC779"
+            uuid = "E41DC7F7-9C42-4C27-AEB6-D7AA8301D62C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Project/Scenes/UnitsViewController.swift"
+            filePath = "Project/Scenes/SensorValuesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "fetchData()"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9AEB98EE-40A8-422A-AB7F-94BD156C0D7E"
+            uuid = "0B432DDF-3BA9-439B-ADA3-F126A1BE245B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Project/Scenes/UnitsViewController.swift"
+            filePath = "Project/Scenes/SensorValuesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "fetchData()"
             landmarkType = "7">
          </BreakpointContent>

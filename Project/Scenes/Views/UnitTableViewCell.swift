@@ -14,6 +14,19 @@ class UnitTableViewCell: UITableViewCell {
     @IBOutlet weak var longtitudeLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var valuesButton: UIButton!
+    
+    var getValues: (()->())?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        setupUI()
+    }
+    
+    private func setupUI(){
+        valuesButton.setBorderColor(color: .systemTeal, width: 2.0)
+    }
     
 
     func setData(unit: UnitModel){
@@ -46,4 +59,7 @@ class UnitTableViewCell: UITableViewCell {
         speedLabel.attributedText = attributedName
     }
     
+    @IBAction func getValuesAction(_ sender: Any) {
+        getValues?()
+    }
 }
