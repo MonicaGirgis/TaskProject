@@ -28,7 +28,7 @@ class UnitsViewController: BaseViewController {
     private func fetchData(){
         guard let token = token else { return}
         fetchToken(accessToken: token) { [weak self] user in
-            let params = "\"spec\":{" + SpecModel().spec.dictionary.queryString + "}," + Params().dictionary.queryString
+            let params = "\"spec\":{" + Spec().dictionary.queryString + "}," + Params().dictionary.queryString
             APIRoute.fetchRequest(clientRequest: .GetUnits(params: params, id: user.eid), decodingModel: Unit.self) { [weak self] response in
                 switch response{
                 case .success(let result):

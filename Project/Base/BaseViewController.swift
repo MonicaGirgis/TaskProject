@@ -9,7 +9,7 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
-    var didLoad: Bool = false
+    private var didLoad: Bool = false
     private var timer = Timer()
     private var user: User?
     

@@ -14,10 +14,6 @@ struct Params: Codable{
     var to: Int = 10000
 }
 
-struct SpecModel: Codable{
-    var spec: Spec = Spec()
-}
-
 struct Spec: Codable{
     var itemsType: String = "avl_unit"
     var propName: String = "sys_name"

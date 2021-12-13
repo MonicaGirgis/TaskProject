@@ -16,13 +16,11 @@ struct UnitModel: Codable{
     var name: String = ""
     var id: Int = 0
     var position: Position = Position()
-    //var sensors:
     
     enum CodingKeys: String, CodingKey{
         case name = "nm"
         case id
         case position = "pos"
-        //case sensors = "sens"
     }
 }
 
@@ -36,8 +34,4 @@ struct Position: Codable{
         case longitude = "x"
         case speed = "s"
     }
-}
-
-struct Sensors: Codable{
-    
 }
